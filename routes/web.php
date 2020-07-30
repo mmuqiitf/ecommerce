@@ -1,7 +1,9 @@
 <?php
 
 
-Route::get('/', function () {return view('welcome');});
+Route::get('/', function () {
+        return view('pages.index');
+});
 //auth & user
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -21,3 +23,7 @@ Route::post('admin/update/reset', 'Admin\ResetPasswordController@reset')->name('
 Route::get('/admin/Change/Password','AdminController@ChangePassword')->name('admin.password.change');
 Route::post('/admin/password/update','AdminController@Update_pass')->name('admin.password.update'); 
 Route::get('admin/logout', 'AdminController@logout')->name('admin.logout');
+
+//-------------- Admin Section ---------------
+// Categories
+Route::get('admin/categories', 'Admin\Category\CategoryController@index')->name('categories');
