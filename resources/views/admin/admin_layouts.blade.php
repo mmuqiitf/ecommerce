@@ -76,8 +76,8 @@
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
               <li class="nav-item"><a href="{{route('categories')}}" class="nav-link">Category</a></li>
+              <li class="nav-item"><a href="{{route('brands')}}" class="nav-link">Brand</a></li>
               <li class="nav-item"><a href="chart-flot.html" class="nav-link">Sub Category</a></li>
-              <li class="nav-item"><a href="chart-chartjs.html" class="nav-link">Brand</a></li>
             </ul>
             <a href="#" class="sl-menu-link">
               <div class="sl-menu-item">
@@ -391,20 +391,20 @@
     <script src="{{asset('public/backend')}}/js/ResizeSensor.js"></script>
     <script src="{{asset('public/backend')}}/js/dashboard.js"></script>
     <script>
-      @if(Session::has('messege'))
+      @if(Session::has('message'))
         var type="{{Session::get('alert-type','info')}}"
         switch(type){
             case 'info':
-                 toastr.info("{{ Session::get('messege') }}");
+                 toastr.info("{{ Session::get('message') }}");
                  break;
             case 'success':
-                toastr.success("{{ Session::get('messege') }}");
+                toastr.success("{{ Session::get('message') }}");
                 break;
             case 'warning':
-               toastr.warning("{{ Session::get('messege') }}");
+               toastr.warning("{{ Session::get('message') }}");
                 break;
             case 'error':
-                toastr.error("{{ Session::get('messege') }}");
+                toastr.error("{{ Session::get('message') }}");
                 break;
         }
       @endif

@@ -54,7 +54,7 @@ class CategoryController extends Controller
             'category_name' => $request->category_name
         ]);
         $notification = [
-            'messege'=>'Category Added!',
+            'message'=>'Category Added!',
             'alert-type'=>'success'
         ];
         return redirect()->back()->with($notification);
@@ -100,13 +100,13 @@ class CategoryController extends Controller
         ]);
         if($update){
             $notification = [
-                'messege'=>'Category Edited!',
+                'message'=>'Category Edited!',
                 'alert-type'=>'success'
             ];
             return redirect()->route('categories')->with($notification);
         }else{
             $notification = [
-                'messege'=>'Category Edit Failed!',
+                'message'=>'Category Edit Failed!',
                 'alert-type'=>'danger'
             ];
             return redirect()->route('categories')->with($notification);
@@ -124,7 +124,7 @@ class CategoryController extends Controller
     {
         Category::where('id', $id)->delete();
         $notification = [
-            'messege'=>'Category Deleted!',
+            'message'=>'Category Deleted!',
             'alert-type'=>'success'
         ];
         return redirect()->back()->with($notification);
