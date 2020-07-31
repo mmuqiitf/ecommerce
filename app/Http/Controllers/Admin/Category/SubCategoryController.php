@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin\Category;
 
 use App\Http\Controllers\Controller;
+use App\Model\Admin\Category;
+use App\Model\Admin\Subcategory;
 use Illuminate\Http\Request;
 
 class SubCategoryController extends Controller
@@ -24,7 +26,9 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $subcategories = Subcategory::with(['category'])->get();
+        $categories = Category::all();
+        return view('admin.subcategory.index', compact('subcategories', 'categories'));
     }
 
     /**
@@ -45,7 +49,19 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'subcategory_name' => 'required|min:3|max:255|unique:subcategories',
+            'category_id' => 'required|numeric'
+        ]);
+        Subcategory::create([
+            'subcategory_name' => $request->subcategory_name,
+            'category_id' => $request->category_id
+        ]);
+        $notification = [
+            'message'=>'Subcategory Added!',
+            'alert-type'=>'success'
+        ];
+        return redirect()->back()->with($notification);
     }
 
     /**
@@ -67,7 +83,9 @@ class SubCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $subcategory = Subcategory::with(['category'])->where('id', $id)->first();
+        $categories = Category::all();
+        return view('admin.subcategory.edit', compact('subcategory', 'categories'));
     }
 
     /**
@@ -79,7 +97,19 @@ class SubCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validate = $request->validate([
+            'subcategory_name' => 'required|min:3|max:255',
+            'category_id' => 'required|numeric'
+        ]);
+        Subcategory::where('id', $id)->update([
+            'subcategory_name' => $request->subcategory_name,
+            'category_id' => $request->category_id
+        ]);
+        $notification = [
+            'message'=>'Subcategory Edited!',
+            'alert-type'=>'success'
+        ];
+        return redirect()->route('subcategories')->with($notification);
     }
 
     /**
@@ -90,6 +120,11 @@ class SubCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Subcategory::where('id', $id)->delete();
+        $notification = [
+            'message'=>'Subcategory Deleted!',
+            'alert-type'=>'success'
+        ];
+        return redirect()->route('subcategories')->with($notification);
     }
 }
