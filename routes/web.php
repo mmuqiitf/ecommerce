@@ -27,3 +27,8 @@ Route::get('admin/logout', 'AdminController@logout')->name('admin.logout');
 //-------------- Admin Section ---------------
 // Categories
 Route::get('admin/categories', 'Admin\Category\CategoryController@index')->name('categories');
+Route::post('admin/store/category', 'Admin\Category\CategoryController@store')->name('category.store');
+Route::get('admin/delete/category/{id}', 'Admin\Category\CategoryController@destroy')->name('category.destroy');
+Route::get('admin/edit/category/{id}', 'Admin\Category\CategoryController@edit')->name('category.edit');
+Route::put('admin/update/category/{id}', 'Admin\Category\CategoryController@update')->name('category.update');
+

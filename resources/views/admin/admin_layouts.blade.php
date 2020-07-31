@@ -39,7 +39,8 @@
     <link href="{{asset('public/backend')}}/lib/highlightjs/github.css" rel="stylesheet">
     <link href="{{asset('public/backend')}}/lib/datatables/jquery.dataTables.css" rel="stylesheet">
     <link href="{{asset('public/backend')}}/lib/select2/css/select2.min.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
     <!-- Starlight CSS -->
     <link rel="stylesheet" href="{{asset('public/backend')}}/css/starlight.css">
   </head>
@@ -384,6 +385,8 @@
     <script src="{{asset('public/backend')}}/lib/datatables/jquery.dataTables.js"></script>
     <script src="{{asset('public/backend')}}/lib/datatables-responsive/dataTables.responsive.js"></script>
     <script src="{{asset('public/backend')}}/lib/select2/js/select2.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
     <script src="{{asset('public/backend')}}/js/starlight.js"></script>
     <script src="{{asset('public/backend')}}/js/ResizeSensor.js"></script>
     <script src="{{asset('public/backend')}}/js/dashboard.js"></script>
@@ -405,9 +408,6 @@
                 break;
         }
       @endif
-   </script>  
-
-   <script>  
        $(document).on("click", "#delete", function(e){
            e.preventDefault();
            var link = $(this).attr("href");

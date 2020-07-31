@@ -47,7 +47,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'category_name' => 'required|unique:categories|min:3|max:191'
+        ]);
+        Category::create([
+            'category_name' => $request->category_name
+        ]);
+        $notification = [
+            'messege'=>'Category Added!',
+            'alert-type'=>'success'
+        ];
+        return redirect()->back()->with($notification);
     }
 
     /**
@@ -69,7 +79,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::where('id', $id)->first();
+        return view('admin.category.edit', compact('category'));
     }
 
     /**
@@ -81,7 +92,26 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validate = $request->validate([
+            'category_name' => 'required|unique:categories|min:3|max:191'
+        ]);
+        $update = Category::where('id', $id)->update([
+            'category_name' => $request->category_name
+        ]);
+        if($update){
+            $notification = [
+                'messege'=>'Category Edited!',
+                'alert-type'=>'success'
+            ];
+            return redirect()->route('categories')->with($notification);
+        }else{
+            $notification = [
+                'messege'=>'Category Edit Failed!',
+                'alert-type'=>'danger'
+            ];
+            return redirect()->route('categories')->with($notification);
+
+        }
     }
 
     /**
@@ -92,6 +122,11 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::where('id', $id)->delete();
+        $notification = [
+            'messege'=>'Category Deleted!',
+            'alert-type'=>'success'
+        ];
+        return redirect()->back()->with($notification);
     }
 }
