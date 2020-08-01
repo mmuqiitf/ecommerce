@@ -45,3 +45,13 @@ Route::post('admin/store/subcategory', 'Admin\Category\SubCategoryController@sto
 Route::get('admin/delete/subcategory/{id}', 'Admin\Category\SubCategoryController@destroy')->name('subcategory.destroy');
 Route::get('admin/edit/subcategory/{id}', 'Admin\Category\SubCategoryController@edit')->name('subcategory.edit');
 Route::put('admin/update/subcategory/{id}', 'Admin\Category\SubCategoryController@update')->name('subcategory.update');
+
+// Coupons
+Route::get('admin/coupons', 'Admin\Category\CouponController@index')->name('admin.coupons');
+Route::post('admin/store/coupon', 'Admin\Category\CouponController@store')->name('coupon.store');
+Route::get('admin/delete/coupon/{id}', 'Admin\Category\CouponController@destroy')->name('coupon.destroy');
+Route::get('admin/edit/coupon/{id}', 'Admin\Category\CouponController@edit')->name('coupon.edit');
+Route::put('admin/update/coupon/{id}', 'Admin\Category\CouponController@update')->name('coupon.update');
+
+// Coupons
+Route::get('admin/newsletters', 'Admin\Category\CouponController@index')->name('admin.newsletters');
