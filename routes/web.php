@@ -53,5 +53,9 @@ Route::get('admin/delete/coupon/{id}', 'Admin\Category\CouponController@destroy'
 Route::get('admin/edit/coupon/{id}', 'Admin\Category\CouponController@edit')->name('coupon.edit');
 Route::put('admin/update/coupon/{id}', 'Admin\Category\CouponController@update')->name('coupon.update');
 
-// Coupons
-Route::get('admin/newsletters', 'Admin\Category\CouponController@index')->name('admin.newsletters');
+// Newsletter
+Route::get('admin/newsletters', 'Admin\Category\NewsletterController@index')->name('admin.newsletters');
+Route::get('admin/delete/newsletter/{id}', 'Admin\Category\NewsletterController@destroy')->name('newsletter.destroy');
+
+//-------------- Frontend Section ---------------
+Route::post('subscribe/store', 'Frontend\SubscribeController@subscribe')->name('newsletter.subscribe');

@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend') }}/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend') }}/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend') }}/plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend') }}/plugins/slick-1.8.0/slick.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend') }}/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('public/frontend') }}/styles/responsive.css">
@@ -258,6 +259,27 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="{{ asset('public/frontend') }}/plugins/slick-1.8.0/slick.js"></script>
 <script src="{{ asset('public/frontend') }}/plugins/easing/easing.js"></script>
 <script src="{{ asset('public/frontend') }}/js/custom.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="{{ asset('https://unpkg.com/sweetalert/dist/sweetalert.min.js')}}"></script>
+<script>
+	@if(Session::has('message'))
+	  var type="{{Session::get('alert-type','info')}}"
+	  switch(type){
+		  case 'info':
+			   toastr.info("{{ Session::get('message') }}");
+			   break;
+		  case 'success':
+			  toastr.success("{{ Session::get('message') }}");
+			  break;
+		  case 'warning':
+			 toastr.warning("{{ Session::get('message') }}");
+			  break;
+		  case 'error':
+			  toastr.error("{{ Session::get('message') }}");
+			  break;
+	  }
+	@endif
+</script>
 </body>
 
 </html>
