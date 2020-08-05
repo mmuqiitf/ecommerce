@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin\Category;
 
 use App\Http\Controllers\Controller;
-use App\Model\Admin\Category;
-use App\Model\Admin\Subcategory;
+use App\Model\Category;
+use App\Model\Subcategory;
 use Illuminate\Http\Request;
 
 class SubCategoryController extends Controller
