@@ -61,6 +61,7 @@ Route::get('admin/delete/newsletter/{id}', 'Admin\Category\NewsletterController@
 Route::get('admin/products', 'Admin\ProductController@index')->name('admin.products');
 Route::get('admin/products/create', 'Admin\ProductController@create')->name('admin.product.create');
 Route::get('/get/subcategory/{category_id}', 'Admin\ProductController@showSubCategory')->name('admin.product.sub');
+Route::post('/admin/products/store', 'Admin\ProductController@store')->name('admin.product.store');
 
 //-------------- Frontend Section ---------------
 Route::post('subscribe/store', 'Frontend\SubscribeController@subscribe')->name('newsletter.subscribe');
