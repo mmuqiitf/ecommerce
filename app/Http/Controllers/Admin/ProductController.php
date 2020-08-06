@@ -3,10 +3,25 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Model\Brand;
+use App\Model\Category;
+use App\Model\Product;
+use App\Model\Subcategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +29,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('admin.product.index', compact('products'));
     }
 
     /**
@@ -24,7 +40,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $brands = Brand::all();
+        return view('admin.product.create', compact('categories', 'brands'));
     }
 
     /**
@@ -81,5 +99,11 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function showSubCategory($category_id)
+    {
+        $subcategories = Subcategory::where('category_id', $category_id)->get();
+        return json_encode($subcategories);
     }
 }
