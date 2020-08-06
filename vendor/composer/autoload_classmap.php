@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AdminSeeder' => $baseDir . '/database/seeds/AdminSeeder.php',
     'App\\Admin' => $baseDir . '/app/Admin.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
@@ -35,11 +36,11 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
-    'App\\Model\\Admin\\Brand' => $baseDir . '/app/Model/Admin/Brand.php',
-    'App\\Model\\Admin\\Category' => $baseDir . '/app/Model/Admin/Category.php',
-    'App\\Model\\Admin\\Coupon' => $baseDir . '/app/Model/Admin/Coupon.php',
-    'App\\Model\\Admin\\Newsletter' => $baseDir . '/app/Model/Admin/Newsletter.php',
-    'App\\Model\\Admin\\Subcategory' => $baseDir . '/app/Model/Admin/Subcategory.php',
+    'App\\Model\\Brand' => $baseDir . '/app/Model/Brand.php',
+    'App\\Model\\Category' => $baseDir . '/app/Model/Category.php',
+    'App\\Model\\Coupon' => $baseDir . '/app/Model/Coupon.php',
+    'App\\Model\\Newsletter' => $baseDir . '/app/Model/Newsletter.php',
+    'App\\Model\\Subcategory' => $baseDir . '/app/Model/Subcategory.php',
     'App\\Notifications\\AdminPasswordResetNotification' => $baseDir . '/app/Notifications/AdminPasswordResetNotification.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

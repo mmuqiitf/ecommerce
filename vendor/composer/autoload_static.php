@@ -419,6 +419,7 @@ class ComposerStaticInite3bae772c4b322f01cd1c02f89ef47e9
     );
 
     public static $classMap = array (
+        'AdminSeeder' => __DIR__ . '/../..' . '/database/seeds/AdminSeeder.php',
         'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -448,11 +449,11 @@ class ComposerStaticInite3bae772c4b322f01cd1c02f89ef47e9
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
-        'App\\Model\\Admin\\Brand' => __DIR__ . '/../..' . '/app/Model/Admin/Brand.php',
-        'App\\Model\\Admin\\Category' => __DIR__ . '/../..' . '/app/Model/Admin/Category.php',
-        'App\\Model\\Admin\\Coupon' => __DIR__ . '/../..' . '/app/Model/Admin/Coupon.php',
-        'App\\Model\\Admin\\Newsletter' => __DIR__ . '/../..' . '/app/Model/Admin/Newsletter.php',
-        'App\\Model\\Admin\\Subcategory' => __DIR__ . '/../..' . '/app/Model/Admin/Subcategory.php',
+        'App\\Model\\Brand' => __DIR__ . '/../..' . '/app/Model/Brand.php',
+        'App\\Model\\Category' => __DIR__ . '/../..' . '/app/Model/Category.php',
+        'App\\Model\\Coupon' => __DIR__ . '/../..' . '/app/Model/Coupon.php',
+        'App\\Model\\Newsletter' => __DIR__ . '/../..' . '/app/Model/Newsletter.php',
+        'App\\Model\\Subcategory' => __DIR__ . '/../..' . '/app/Model/Subcategory.php',
         'App\\Notifications\\AdminPasswordResetNotification' => __DIR__ . '/../..' . '/app/Notifications/AdminPasswordResetNotification.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
