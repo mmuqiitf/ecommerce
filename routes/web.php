@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
         return view('pages.index');
@@ -15,7 +15,7 @@ Route::get('/user/logout', 'HomeController@Logout')->name('user.logout');
 Route::get('admin/home', 'AdminController@index')->name('admin.home');
 Route::get('admin', 'Admin\LoginController@showLoginForm')->name('admin.login');
 Route::post('admin', 'Admin\LoginController@login');
-        // Password Reset Routes...
+// Password Reset Routes...
 Route::get('admin/password/reset', 'Admin\ForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
 Route::post('admin-password/email', 'Admin\ForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
 Route::get('admin/reset/password/{token}', 'Admin\ResetPasswordController@showResetForm')->name('admin.password.reset');
@@ -70,6 +70,16 @@ Route::get('/admin/products/edit/{id}', 'Admin\ProductController@edit')->name('a
 Route::put('/admin/products/update/{id}', 'Admin\ProductController@update')->name('admin.product.update');
 Route::put('/admin/products/update-photo/{id}', 'Admin\ProductController@updatePhoto')->name('admin.product.update.photo');
 
+// Posts
+Route::get('admin/posts', 'Admin\Post\PostController@index')->name('admin.posts');
+Route::get('admin/post/create', 'Admin\Post\PostController@create')->name('admin.post.create');
+
+// Post Categories
+Route::get('admin/post-cat', 'Admin\Post\PostCategoryController@index')->name('admin.post-cat');
+Route::post('admin/post-cat/store', 'Admin\Post\PostCategoryController@store')->name('admin.post-cat.store');
+Route::get('admin/post-cat/edit/{id}', 'Admin\Post\PostCategoryController@edit')->name('admin.post-cat.edit');
+Route::put('admin/post-cat/update/{id}', 'Admin\Post\PostCategoryController@update')->name('admin.post-cat.update');
+Route::get('admin/post-cat/delete/{id}', 'Admin\Post\PostCategoryController@destroy')->name('admin.post-cat.destroy');
 
 //-------------- Frontend Section ---------------
 Route::post('subscribe/store', 'Frontend\SubscribeController@subscribe')->name('newsletter.subscribe');

@@ -105,13 +105,14 @@
             <a href="#" class="sl-menu-link">
               <div class="sl-menu-item">
                 <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
-                <span class="menu-item-label">Tables</span>
+                <span class="menu-item-label">Posts</span>
                 <i class="menu-item-arrow fa fa-angle-down"></i>
               </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-              <li class="nav-item"><a href="table-basic.html" class="nav-link">Basic Table</a></li>
-              <li class="nav-item"><a href="table-datatable.html" class="nav-link">Data Table</a></li>
+              <li class="nav-item"><a href="{{ route('admin.posts') }}" class="nav-link">All Posts</a></li>
+              <li class="nav-item"><a href="{{ route('admin.post.create') }}" class="nav-link">Create Post</a></li>
+              <li class="nav-item"><a href="{{ route('admin.post-cat') }}" class="nav-link">All Post Categories</a></li>
             </ul>
             <a href="#" class="sl-menu-link">
               <div class="sl-menu-item">
