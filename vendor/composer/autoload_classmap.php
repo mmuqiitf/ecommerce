@@ -41,6 +41,7 @@ return array(
     'App\\Model\\Category' => $baseDir . '/app/Model/Category.php',
     'App\\Model\\Coupon' => $baseDir . '/app/Model/Coupon.php',
     'App\\Model\\Newsletter' => $baseDir . '/app/Model/Newsletter.php',
+    'App\\Model\\PostCategory' => $baseDir . '/app/Model/PostCategory.php',
     'App\\Model\\Product' => $baseDir . '/app/Model/Product.php',
     'App\\Model\\Subcategory' => $baseDir . '/app/Model/Subcategory.php',
     'App\\Notifications\\AdminPasswordResetNotification' => $baseDir . '/app/Notifications/AdminPasswordResetNotification.php',

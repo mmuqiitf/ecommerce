@@ -62,6 +62,14 @@ Route::get('admin/products', 'Admin\ProductController@index')->name('admin.produ
 Route::get('admin/products/create', 'Admin\ProductController@create')->name('admin.product.create');
 Route::get('/get/subcategory/{category_id}', 'Admin\ProductController@showSubCategory')->name('admin.product.sub');
 Route::post('/admin/products/store', 'Admin\ProductController@store')->name('admin.product.store');
+Route::get('/admin/products/active/{id}', 'Admin\ProductController@active')->name('admin.product.active');
+Route::get('/admin/products/inactive/{id}', 'Admin\ProductController@inactive')->name('admin.product.inactive');
+Route::get('/admin/products/delete/{id}', 'Admin\ProductController@destroy')->name('admin.product.destroy');
+Route::get('/admin/products/show/{id}', 'Admin\ProductController@show')->name('admin.product.show');
+Route::get('/admin/products/edit/{id}', 'Admin\ProductController@edit')->name('admin.product.edit');
+Route::put('/admin/products/update/{id}', 'Admin\ProductController@update')->name('admin.product.update');
+Route::put('/admin/products/update-photo/{id}', 'Admin\ProductController@updatePhoto')->name('admin.product.update.photo');
+
 
 //-------------- Frontend Section ---------------
 Route::post('subscribe/store', 'Frontend\SubscribeController@subscribe')->name('newsletter.subscribe');
